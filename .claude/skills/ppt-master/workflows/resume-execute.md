@@ -45,7 +45,7 @@ Read .claude/skills/ppt-master/SKILL.md
 
 Then jump to `### Step 6: Executor Phase` and run the documented pipeline:
 
-- Read references (executor-base + shared-standards + the locked `mode` file under `modes/` + the locked `visual_style` file under `visual-styles/` + image-layout-spec + svg-image-embedding)
+- Read references exactly as SKILL.md Step 6 lists them (executor-base + shared-standards + native-shape-authoring + the locked `mode` file under `modes/` + the locked `visual_style` file under `visual-styles/`, plus each CONDITIONAL file only when its trigger holds). `image-layout-spec` / `svg-image-embedding` are read on demand when a page places images, as executor-base.md links them
 - Design Parameter Confirmation
 - Pre-generation Batch Read (every layout / chart SVG referenced in `spec_lock`)
 - Milestone `spec_lock` re-read (P01/P05/P09, …, plus after context compaction) + sequential page generation

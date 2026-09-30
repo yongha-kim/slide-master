@@ -38,7 +38,7 @@ The `decks/` directory holds full reference decks: identity + structure bundles 
 
 ## Visualization Templates
 
-The `charts/` directory contains 57 standardized visualization templates. For backward compatibility, the directory name remains `charts/`, but its scope includes charts, infographics, process diagrams, relationship diagrams, strategic frameworks, and system architecture diagrams:
+The `charts/` directory contains 76 standardized visualization templates (the authoritative list is `charts/charts_index.json`). For backward compatibility, the directory name remains `charts/`, but its scope includes charts, infographics, process diagrams, relationship diagrams, strategic frameworks, and system architecture diagrams:
 
 - KPI Cards
 - Bar Chart / Stacked Bar Chart

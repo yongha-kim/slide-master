@@ -22,7 +22,7 @@ Global artifact ownership rules for PPT Master projects.
 | `images/` | Runtime image pool | User, extracted, AI, web, formula, slice, EMF/WMF assets | Step 5 writes here; `analysis/image_analysis.csv` derives from current contents |
 | `icons/` | Project icon inventory | Icons copied by `icon_sync.py` for this project | Executor uses locked project icons; exporter may fall back to global library only as documented |
 | `templates/` | Project template reference | Step 3 imported specs, template SVGs, and non-image assets | Strategist/Executor read only when Step 3 is triggered |
-| `confirm_ui/recommendations.json` | Confirmation proposal | Strategist-authored confirmation payload | Confirm UI reads; rewritten between Stage 1, Stage 2, and Stage 3 |
+| `confirm_ui/recommendations.json` | Confirmation proposal | Strategist-authored confirmation payload | Confirm UI reads; written once for the default single-pass page, rewritten between stages only in the explicit staged flow |
 | `confirm_ui/result.json` | Confirmation result | User-confirmed values | Strategist treats final result as authoritative over recommendations |
 | `svg_output/` | Page-design author source | Main-agent handwritten SVG pages containing the complete visible design | Quality checker and native PPTX export read this as the canonical visual/page-layout source; templates and locks do not add missing visible objects at export |
 | `notes/total.md` | Speaker-note source (opt-in; absent on the default no-notes path) | Complete notes before splitting | Step 6 writes only when notes were requested; Step 7.1 splits |
