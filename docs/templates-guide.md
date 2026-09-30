@@ -14,7 +14,9 @@ This guide answers three questions:
 
 ### How to trigger
 
-The workflow **defaults to free design** — it will not ask whether you want a template and will not proactively suggest one. Templates are opt-in by **explicit directory path** only: name the path in your initial message.
+When you give no template path, the workflow asks **one** question right after your sources are processed: it lists up to 3 brands/decks from the library that match the document type (for example `term_sheet` for an investor pitch, `lake_blue_memo` for investment research) plus **free design**. Pick one, or pick free design; nothing is installed without your answer. Say "no template" in your first message to skip the question.
+
+You can also opt in directly by **explicit directory path**: name the path in your initial message and the question is skipped.
 
 ### How to enter the template flow
 

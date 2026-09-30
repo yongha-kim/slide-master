@@ -15,6 +15,10 @@
     "summary": "Jangpm editorial identity — Korean lecture / report decks, 모노크롬 + 단일 인디고 액센트",
     "primary_color": "#4633E3"
   },
+  "lake_blue_memo": {
+    "summary": "Lake Blue Memo 금융 리서치 아이덴티티 — 투자 리서치, 실사(DD), 투자심의 자료, 전략·시장 전망 보고, 페이퍼 화이트 + 딥 레이크블루 + 그레이프 퍼플",
+    "primary_color": "#072535"
+  },
   "mckinsey": {
     "summary": "McKinsey consulting-style identity — 전략 보고/분석 브리핑, 네이비 구조색 + 시안 포인트, 액션 타이틀 보이스",
     "primary_color": "#0F2A4A"
@@ -22,5 +26,9 @@
   "naver": {
     "summary": "NAVER corporate identity — IR/실적발표, 재무 보고, 네이버 관련 기업·서비스 자료",
     "primary_color": "#03C75A"
+  },
+  "term_sheet": {
+    "summary": "Term Sheet 기관투자자 피치 아이덴티티 — 투자 유치 피치, IR, 투자자 미팅, 펀딩 라운드 자료, 쿨 화이트 + 단일 네이비",
+    "primary_color": "#16315C"
   }
 }

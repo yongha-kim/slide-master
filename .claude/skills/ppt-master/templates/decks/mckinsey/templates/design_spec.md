@@ -15,7 +15,7 @@ source_canvas_height: 720
 source_viewbox: "0 0 1280 720"
 replication_mode: fidelity
 native_structure_mode: structured
-page_count: 10
+page_count: 12
 ---
 
 # McKinsey Consulting Style Deck — Design Specification
@@ -73,6 +73,14 @@ Content pages use an optional 13.3px uppercase kicker, a declarative 32px action
 - **Primary + supporting exhibit**: limit the body to two major zones. The right zone contains one integrated supporting visualization and never another nested mini-grid.
 - `INSIGHT` is the label for analytical synthesis. `VERDICT` is reserved for genuine option selection, approval, or recommendation pages.
 
+### Boardroom components
+
+Merged from the user-supplied Boardroom theme; they take this deck's colors, not Boardroom's own palette.
+
+- **Agenda tracker**: a row of 12px squares at top-right (y=20), one per agenda section; the current section is filled navy `#0F2A4A`, the rest outlined in `#D0D0D0`. Use only when the deck has 3–8 explicit sections, and keep the square count equal to the agenda row count.
+- **Bar exhibit + takeaway** (`03f`): ranked horizontal bars on `#F2F2F2` tracks, only the key bar in navy, values right-aligned in one column; a `#F2F2F2` takeaway panel with a 4px navy left border holds one KPI and the page's single takeaway. The takeaway panel replaces the bottom `INSIGHT` strip on this layout — never use both.
+- **Priority matrix chapter** (`02b`): a light section opener with an Effort / Impact 2×2 on hairline axes; only the winning quadrant is filled navy with white text. Use it when the section opens on a prioritization, otherwise keep the dark `02_chapter` reset.
+
 ### Metric and density discipline
 
 - Every emphasized number carries subject, metric, time, and unit in the same visual group. Place deltas beside their compared values; detached `+X`, `%`, or `%p` callouts are not allowed.
@@ -104,19 +112,21 @@ Install-local Pretendard is the deck typeface. Weight cuts are authored as insta
 
 ## V. Page Roster
 
-All pages use Master `mckinsey-master`. Existing five prototypes remain unchanged; the five content variants are newly authored fidelity-mode layouts.
+All pages use Master `mckinsey-master`. Existing five prototypes remain unchanged; the five content variants are newly authored fidelity-mode layouts, and `02b` / `03f` add the Boardroom components.
 
 | File | Role | Layout key | PowerPoint picker | Intended content and slot topology |
 | --- | --- | --- | --- | --- |
 | `01_cover.svg` | cover | `01_cover` | Cover | Asymmetric consulting cover |
 | `02_toc.svg` | toc | `02_toc` | Agenda | Four ruled agenda rows |
 | `02_chapter.svg` | chapter | `02_chapter` | Chapter | Dark-navy section reset |
+| `02b_chapter_matrix.svg` | chapter | `02b_chapter_matrix` | Chapter — Priority Matrix | Light section opener; one Effort / Impact matrix proxy zone |
 | `03_content.svg` | content | `03_content` | Content | Generic action-title shell; Executor composes the body |
 | `03a_content_keyword_stack.svg` | content | `03a_content_keyword_stack` | Executive Summary — Keyword Stack | One composite findings zone supporting 3–5 rows |
 | `03b_content_thesis_chain.svg` | content | `03b_content_thesis_chain` | Executive Summary — Thesis Chain | Thesis band, causal chain, watchpoint proxy zones |
 | `03c_content_evidence_matrix.svg` | content | `03c_content_evidence_matrix` | Evidence Matrix | Four exhibit proxy zones plus one INSIGHT zone |
 | `03d_content_trend_multiples.svg` | content | `03d_content_trend_multiples` | Trend + Small Multiples | One trend, four diagnostic proxy zones, one INSIGHT zone |
 | `03e_content_exhibit_split.svg` | content | `03e_content_exhibit_split` | Primary + Supporting Exhibit | One 65% primary exhibit, one 35% supporting exhibit, one INSIGHT zone |
+| `03f_content_bar_takeaway.svg` | content | `03f_content_bar_takeaway` | Bar Exhibit + Takeaway | Agenda tracker, one ranked-bar exhibit proxy zone, one takeaway panel proxy zone |
 | `04_ending.svg` | ending | `04_ending` | Ending | Dark-navy centered closing |
 
 The composite zones intentionally use `object` proxy bindings because each contains several visible chart or text atoms. Their differing counts and bounds are the authored Layout contracts; they must not be collapsed into identical generic content Layouts.

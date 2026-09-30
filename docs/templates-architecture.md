@@ -110,7 +110,7 @@ primary_color: "<HEX>"
 
 | § | Title | Required fields |
 |---|---|---|
-| I | Brand Overview | Brand Name / Use Cases / Tone |
+| I | Brand Overview | Brand Name / Use Cases / Tone; optional `Recommended pairing` (mode / visual_style / delivery_purpose / image_usage / icons ids that seed the Step 4 recommendations — never a lock) |
 | II | Color Scheme | role / HEX / provenance (`fact` official truth \| `approx` derived) / notes |
 | III | Typography | role / family / weight |
 | IV | Logo | file / form / usage + clearspace and lockup rules |

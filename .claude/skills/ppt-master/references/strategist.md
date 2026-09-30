@@ -104,7 +104,7 @@ The deck's **visual aesthetic** — shape language, decoration density, whitespa
 
 Write the locked value to `spec_lock.md` `- visual_style:` and the rationale to `design_spec.md`. Executor loads only that one visual-style file.
 
-> **Template vs preset**: a style mention may sound like a template name ("academic style" vs the `academic_defense/` template directory). Step 3 only triggers on an explicit template directory path supplied by the user — bare names and style words never copy templates; they map to a visual-style preset here. If a template was triggered upstream, its files are already in `<project_path>/templates/` and its fused design_spec governs.
+> **Template vs preset**: a style mention may sound like a template name ("academic style" vs the `academic_defense/` template directory). Step 3 installs only a path the user confirmed — an explicit template directory path, or the answer to its single recommendation question. Bare names and style words never copy templates by themselves; they map to a visual-style preset here. If a template was triggered upstream, its files are already in `<project_path>/templates/` and its fused design_spec governs.
 
 **Legacy template boundary**: A template containing `native_structure.json`, `source_template.pptx`, missing root Master identity, direct atomic placeholders, or old `baseline` / `preserve` / distillation metadata must run [`restore-pptx-structure`](../workflows/restore-pptx-structure.md) before Step 3. Do not plan against a legacy compatibility contract.
 
@@ -118,6 +118,18 @@ Write the locked value to `spec_lock.md` `- visual_style:` and the rationale to 
 **Default — adaptive (may override when the user requests exact template use)**: Recommend `adaptive` when the user supplied only a template path with no stricter instruction. The same default applies when the deck was selected through the template card (deferred install): the card surfaces `template_adherence` beside the deck choice, preset to `adaptive`. Preselect `strict` when the user explicitly asks to follow or preserve the template closely; the confirmation still records the final choice. Record the confirmed value in `design_spec.md §I` and as `template_adherence` under `spec_lock.md pptx_structure`.
 
 > Note: `content_divergence` controls how source material is reorganized; `template_adherence` controls how template visuals/layouts are used. Never infer one from the other.
+
+**Brand recommended pairing**: When Step 3 installed a `kind: brand` whose `§I Brand Overview` table carries a `Recommended pairing` row, that row is the default recommendation — not a lock — for the fields it names:
+
+| Pairing key | Field it seeds |
+|---|---|
+| `mode` | Layer 1 `recommend.mode` |
+| `visual_style` | Layer 2 `recommend.visual_style` — the *safe* pick of the ≥3 `visual_style_spectrum` |
+| `delivery_purpose` | §c `recommend.delivery_purpose` (and therefore the body size) |
+| `image_usage` | §h `recommend.image_usage`, with any scope note the row gives (for example cover only) |
+| `icons` | §f `recommend.icons` |
+
+A user-supplied outline, a user-named style, or an explicit user request still wins, and the user's confirmation page choice is final. Record in `design_spec.md §I` that the recommendation came from the brand pairing.
 
 **Downstream effect**: e / f / g / h realize the locked mode + visual style. Example: `showcase` + `dark-tech` → e applies one luminous accent on a dark field; g pairs a clean sans with mono; f minimal glow icons; h the `digital-dashboard` rendering.
 

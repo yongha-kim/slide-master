@@ -25,6 +25,7 @@ Each style has its own file with: shape & decoration, typography character, colo
 | [`glassmorphism`](./glassmorphism.md) | Translucent glass panels, gradient light, floating depth | Modern SaaS, fintech, product launches, AI demos | `glassmorphism` | sparse |
 | [`dark-tech`](./dark-tech.md) | Dark canvas, glow accents, geometric precision | Tech, AI, data products, launches | `digital-dashboard` | sparse |
 | [`blueprint`](./blueprint.md) | Schematic line work on dark paper, isometric, annotated | Technical briefings, architecture, engineering | `blueprint` | supportive |
+| [`consulting-action`](./consulting-action.md) | Action titles over hairlines, ruled evidence, sourced footer, flat and square | Board / exec reports, strategy recommendations, investor pitches | `minimalist-swiss` | sparse |
 
 ### 1.2 Editorial / publication
 
@@ -34,6 +35,7 @@ Each style has its own file with: shape & decoration, typography character, colo
 | [`photo-editorial`](./photo-editorial.md) | Full-bleed photography dominates, text points & captions | Architecture, design, fashion, culture, photo-led | `corporate-photo` | sparse |
 | [`data-journalism`](./data-journalism.md) | Multi-column micro-charts, sidebars, source lines, dense | Finance, market reviews, research, data reports | `editorial` | sparse |
 | [`brutalist`](./brutalist.md) | Newsprint density, ruled boxes, raw structure, flat | Annual reviews, research digests, manifestos | `screen-print` / `editorial` | supportive |
+| [`institutional-memo`](./institutional-memo.md) | Boxless two-column research memo, sourced evidence modules, small multiples | Investment research, due diligence, investment-committee papers | `editorial` | sparse |
 
 ### 1.3 Expressive / print
 
@@ -69,6 +71,8 @@ Each style has its own file with: shape & decoration, typography character, colo
 | Finance / journalism / research / long-form analysis | `editorial` | `data-journalism` |
 | Photography-led / architecture / design / fashion / 大图 | `photo-editorial` | `editorial` |
 | Data report / market review / 财经 / Bloomberg / Economist | `data-journalism` | `editorial` |
+| Board / exec report / strategy recommendation / investor pitch / 경영보고 | `consulting-action` | `swiss-minimal` |
+| Investment research / due diligence / investment committee / 투자심의 | `institutional-memo` | `data-journalism` |
 | Product / SaaS / training / consumer / friendly | `soft-rounded` | `editorial` |
 | Modern SaaS / fintech / health-tech / premium app | `glassmorphism` | `dark-tech` |
 | Tech / AI / dev tools / data / futuristic | `dark-tech` | `glassmorphism` |

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g>
+    <rect x="1070" y="52" width="14" height="14" fill="#1F3A5F"/>
+    <rect x="1092" y="52" width="14" height="14" fill="none" stroke="#D5DCE4" stroke-width="2"/>
+    <rect x="1114" y="52" width="14" height="14" fill="none" stroke="#D5DCE4" stroke-width="2"/>
+    <rect x="1136" y="52" width="14" height="14" fill="none" stroke="#D5DCE4" stroke-width="2"/>
+    <rect x="1158" y="52" width="14" height="14" fill="none" stroke="#D5DCE4" stroke-width="2"/>
+    <rect x="1180" y="52" width="14" height="14" fill="none" stroke="#D5DCE4" stroke-width="2"/>
+  </g>
+  <text x="72" y="116" font-family="Pretendard, Arial, sans-serif" font-size="44" font-weight="700" fill="#1F3A5F">Lorem ipsum grows 2x by focusing on one segment</text>
+  <path d="M72 144H1208" stroke="#D5DCE4" stroke-width="2"/>
+  <text x="72" y="202" font-family="Pretendard, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="2" fill="#5B6B7E">REVENUE BY SEGMENT · FY26</text>
+  <g font-family="Pretendard, Arial, sans-serif" font-size="20" fill="#5B6B7E">
+    <text x="72" y="258">Segment A</text>
+    <rect x="232" y="238" width="480" height="28" fill="#EEF2F7"/>
+    <rect x="232" y="238" width="432" height="28" fill="#1F3A5F"/>
+    <text x="772" y="259" text-anchor="end" font-weight="700" fill="#1F3A5F">72</text>
+    <text x="72" y="318">Segment B</text>
+    <rect x="232" y="298" width="480" height="28" fill="#EEF2F7"/>
+    <rect x="232" y="298" width="264" height="28" fill="#A8B6C7"/>
+    <text x="772" y="319" text-anchor="end">44</text>
+    <text x="72" y="378">Segment C</text>
+    <rect x="232" y="358" width="480" height="28" fill="#EEF2F7"/>
+    <rect x="232" y="358" width="180" height="28" fill="#A8B6C7"/>
+    <text x="772" y="379" text-anchor="end">30</text>
+    <text x="72" y="438">Segment D</text>
+    <rect x="232" y="418" width="480" height="28" fill="#EEF2F7"/>
+    <rect x="232" y="418" width="108" height="28" fill="#A8B6C7"/>
+    <text x="772" y="439" text-anchor="end">18</text>
+  </g>
+  <rect x="832" y="190" width="376" height="256" fill="#EEF2F7"/>
+  <rect x="832" y="190" width="6" height="256" fill="#1F3A5F"/>
+  <text x="866" y="236" font-family="Pretendard, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2" fill="#1F3A5F">KEY TAKEAWAY</text>
+  <text x="866" y="284" font-family="Pretendard, Arial, sans-serif" font-size="26" font-weight="600" fill="#1F3A5F">Segment A carries</text>
+  <text x="866" y="320" font-family="Pretendard, Arial, sans-serif" font-size="26" font-weight="600" fill="#1F3A5F">most of the upside</text>
+  <text x="866" y="372" font-family="Pretendard, Arial, sans-serif" font-size="20" fill="#5B6B7E">Dolor sit amet, consectetur</text>
+  <text x="866" y="402" font-family="Pretendard, Arial, sans-serif" font-size="20" fill="#5B6B7E">adipiscing elit sed do</text>
+  <path d="M72 640H1208" stroke="#D5DCE4" stroke-width="1.5"/>
+  <text x="72" y="672" font-family="Pretendard, Arial, sans-serif" font-size="18" fill="#5B6B7E">Source: team analysis · Lorem ipsum</text>
+  <text x="1208" y="672" text-anchor="end" font-family="Pretendard, Arial, sans-serif" font-size="18" fill="#5B6B7E">7</text>
+</svg>

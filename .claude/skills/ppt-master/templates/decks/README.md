@@ -10,7 +10,7 @@ Full data model: [`docs/templates-architecture.md`](../../../../../docs/template
 
 ## Trigger rule
 
-Deck selection is **opt-in by explicit path**. The main workflow defaults to free design. For a current package, the user supplies the explicit workspace root (for example, `.claude/skills/ppt-master/templates/decks/<deck_id>/`), not its inner `templates/` directory. A legacy-flat deck root containing `design_spec.md` remains a compatible input. Bare names do not trigger. See [`SKILL.md`](../../SKILL.md) Step 3.
+Deck selection is **opt-in**: an explicit path, the user's answer to the Step 3 recommendation question, or the Step 4 template card. Free design remains the fallback. For a current package, the user supplies the explicit workspace root (for example, `.claude/skills/ppt-master/templates/decks/<deck_id>/`), not its inner `templates/` directory. A legacy-flat deck root containing `design_spec.md` remains a compatible input. Bare names only rank the recommendation question's candidates. See [`SKILL.md`](../../SKILL.md) Step 3.
 
 `decks_index.json` is a **discovery aid**, not a trigger — it lets the AI answer "what decks exist?" by listing ids and paths. Listing alone never advances the pipeline.
 

@@ -257,7 +257,7 @@ The architectural choice worth flagging: **viewBox is in pixels, not absolute un
 
 ## Template System & Optional Path
 
-Templates are **opt-in, not default**. The default Strategist flow is free design — AI invents the visual system from the source content alone. The template path activates only on an explicit directory path supplied by the user.
+Templates are **opt-in, not default**. Without an explicit directory path, Step 3 asks one recommendation question (up to 3 brands/decks matched to the document type, plus free design); the template path activates only on an explicit directory path or the user's answer to that question. Free design — AI invents the visual system from the source content alone — remains the fallback.
 
 **Why default to free design.** Templates are floors that easily become ceilings: they lock the deck into the template's visual idioms regardless of how the content actually wants to be presented. Free-design layouts derive structure from the source content rather than imposing it from a fixed grammar, so the visual rhythm tracks the content rather than fighting it. Constrained mode is genuinely better in narrow cases (brand-locked decks, strongly-typed scenarios like academic defense or government report), so it stays available — but the AI doesn't proactively reach for it; the user does.
 

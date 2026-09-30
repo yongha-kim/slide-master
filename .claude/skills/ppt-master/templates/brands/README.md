@@ -52,4 +52,4 @@ Logo filenames are descriptive, not contractual — `templates/design_spec.md` �
 
 [brands_index.json](./brands_index.json) is a slim machine-readable map (`brand_id → { summary, primary_color }`). It is refreshed by `register_template.py --kind brand <brand_id>` after a brand is created or edited.
 
-Listing the index does not trigger any pipeline action — Step 3 triggers only on an explicit directory path supplied by the user, regardless of whether the brand appears in the index.
+Listing the index does not trigger any pipeline action. Step 3 uses the index summaries to rank the candidates of its single recommendation question; a brand installs only on an explicit directory path or the user's answer to that question.

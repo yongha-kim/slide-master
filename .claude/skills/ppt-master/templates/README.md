@@ -25,7 +25,7 @@ The `brands/` directory holds brand-only templates: identity bundles (color / ty
 A brand is structurally a layout template minus its page roster. Use a brand when the user wants identity locking with free page layout; use a layout template when fixed page structures are also required.
 
 - **Human browsing**: [brands/README.md](./brands/README.md)
-- **Discovery index (no trigger)**: [brands/brands_index.json](./brands/brands_index.json) — answers "what brands exist?"; Step 3 still requires an explicit directory path from the user
+- **Discovery index (no trigger)**: [brands/brands_index.json](./brands/brands_index.json) — answers "what brands exist?" and supplies the candidates of the Step 3 recommendation question; an install still requires an explicit path or the user's answer
 - **Creation workflow**: [`../workflows/create-brand.md`](../workflows/create-brand.md)
 
 ## Deck Templates
@@ -33,7 +33,7 @@ A brand is structurally a layout template minus its page roster. Use a brand whe
 The `decks/` directory holds full reference decks: identity + structure bundles (color / typography / voice plus an SVG page roster and layout grammar). A deck locks both segments at SKILL.md Step 3; use a deck when the user wants a complete ready-made design system, a layout when only page structure should be fixed, and a brand when only identity should be locked. Decks follow the same explicit-path trigger and workspace routing as layouts and brands.
 
 - **Human browsing**: [decks/README.md](./decks/README.md)
-- **Discovery index (no trigger)**: [decks/decks_index.json](./decks/decks_index.json) — answers "what decks exist?"; Step 3 still requires an explicit directory path from the user
+- **Discovery index (no trigger)**: [decks/decks_index.json](./decks/decks_index.json) — answers "what decks exist?" and supplies the candidates of the Step 3 recommendation question; an install still requires an explicit path or the user's answer
 - **Creation workflow**: [`../workflows/create-template.md`](../workflows/create-template.md)
 
 ## Visualization Templates

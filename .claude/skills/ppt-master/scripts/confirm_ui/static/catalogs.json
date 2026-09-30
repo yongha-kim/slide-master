@@ -257,6 +257,18 @@
           "desc_en": "Dark blueprint linework, isometric structure, and engineering annotations.",
           "desc_ja": "濃紺の設計図風の線画、アイソメトリック構造、技術的な注記。",
           "desc_ko": "짙은 바탕의 설계도 선화, 아이소메트릭 구조, 엔지니어링 주석."
+        },
+        {
+          "id": "consulting-action",
+          "label": "consulting-action",
+          "label_zh": "咨询行动标题",
+          "label_en": "consulting-action",
+          "label_ja": "コンサル・アクション",
+          "label_ko": "컨설팅 액션",
+          "desc_zh": "结论式标题配细线、规整的证据表格、来源页脚，扁平方角。",
+          "desc_en": "Conclusion-sentence titles over hairlines, ruled evidence, sourced footers, flat and square.",
+          "desc_ja": "結論型タイトルと細罫線、罫線で整理された根拠、出典フッター、フラットで角張ったデザイン。",
+          "desc_ko": "결론형 액션 타이틀과 헤어라인, 정돈된 근거 표, 출처 푸터, 평면·직각 스타일."
         }
       ]
     },
@@ -314,6 +326,18 @@
           "desc_en": "Newspaper-like density, heavy rules, raw structure, and flat treatment.",
           "desc_ja": "新聞のような情報密度、太い罫線、素朴な構造、フラットな表現。",
           "desc_ko": "신문 같은 밀도, 굵은 괘선, 날것의 구조, 플랫한 표현."
+        },
+        {
+          "id": "institutional-memo",
+          "label": "institutional-memo",
+          "label_zh": "机构研究备忘",
+          "label_en": "institutional-memo",
+          "label_ja": "機関投資メモ",
+          "label_ko": "기관 리서치 메모",
+          "desc_zh": "无卡片双栏研究报告、带来源的证据模块、小多图。",
+          "desc_en": "Boxless two-column research memo, sourced evidence modules, and small multiples.",
+          "desc_ja": "カードを使わない2段組みのリサーチメモ、出典付きの根拠モジュール、スモールマルチプル。",
+          "desc_ko": "카드 없는 2단 리서치 메모, 출처가 달린 증거 모듈, 스몰 멀티플 차트."
         }
       ]
     },

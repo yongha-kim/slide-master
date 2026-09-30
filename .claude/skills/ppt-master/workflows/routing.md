@@ -107,9 +107,10 @@ not make a direct route inherit the main SVG skill.
 |---|---|
 | Explicit current brand/layout/deck workspace root containing `templates/design_spec.md` | Enter main Step 3 template option; use the workspace root, not its inner `templates/` directory |
 | Explicit legacy-flat root containing `design_spec.md` | Enter main Step 3 through the compatibility reader; flat packaging alone does not require structure restoration |
-| Explicit "use a template" intent, or a bare name matching a deck id in `decks_index.json` | Ask the single narrow disambiguation question (SKILL.md Step 3): matched deck path(s) + free design; a deck answer enters Step 3 as a confirmed explicit path |
-| Bare layout/brand name or style label | Do not trigger Step 3; treat as style input for the Strategist confirmation stage (the Stage 1 template card still offers the deck library) |
+| No explicit path — "use a template" intent, a bare brand/deck name, a style label, or silence | Ask the single recommendation question (SKILL.md Step 3): up to 3 matching brand/deck paths + free design; a brand/deck answer enters Step 3 as a confirmed explicit path. Names and style labels only rank the candidates |
+| Explicit no-template instruction, or a SKILL.md Step 3 skip condition | Skip the question; free design (the Stage 1 template card still offers the deck library) |
+| Bare layout name | Do not install; layouts enter only through an explicit path. Treat the name as style input for the Strategist confirmation stage |
 | User asks "what templates exist?" | Answer as Q&A by listing indexed paths; do not advance the pipeline |
 | Raw `.pptx` called a template | Route by §3, usually the `ppt-template-fill` skill; never treat it as a Step 3 template path |
 
-**Forbidden - fuzzy resolution**: Do not resolve bare names to local template directories and install them on the user's behalf. A deck-id mention triggers only the single disambiguation question; the path that enters Step 3 is always one the user confirmed (their answer, an explicit path, or the Stage 1 template card). For every current template kind, that path is the workspace root.
+**Forbidden - fuzzy resolution**: Do not resolve bare names to local template directories and install them on the user's behalf. Names only rank the single recommendation question; the path that enters Step 3 is always one the user confirmed (their answer, an explicit path, or the Stage 1 template card). For every current template kind, that path is the workspace root.

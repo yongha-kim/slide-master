@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" data-pptx-master="mckinsey-master" data-pptx-master-name="McKinsey" data-pptx-layout="02b_chapter_matrix" data-pptx-layout-name="Chapter — Priority Matrix">
+  <!-- McKinsey — light section opener with an Effort / Impact 2x2; winning quadrant filled navy (Boardroom merge) -->
+
+  <rect id="master-bg" width="1280" height="720" fill="#FFFFFF" data-pptx-layer="master" data-pptx-editable="false"/>
+  <rect id="layout-accent-rule" x="44" y="296" width="64" height="3" fill="#2E9BD6" data-pptx-layer="layout" data-pptx-editable="false"/>
+  <line id="layout-footer-rule" x1="44" y1="676" x2="1236" y2="676" stroke="#D0D0D0" stroke-width="1" data-pptx-layer="layout" data-pptx-editable="false"/>
+
+  <g id="title-slot" data-pptx-placeholder="title" data-pptx-placeholder-bounds="44 320 520 60">
+    <text id="title-carrier" data-pptx-placeholder-carrier="true" x="44" y="364" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="40" font-weight="700" letter-spacing="-0.8" fill="#0F2A4A">{{CHAPTER_TITLE}}</text>
+  </g>
+  <g id="page-number-slot" data-pptx-placeholder="slide-number" data-pptx-placeholder-idx="3" data-pptx-placeholder-bounds="1100 684 136 20">
+    <text id="page-number-carrier" data-pptx-placeholder-carrier="true" x="1236" y="698" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="12" text-anchor="end" fill="#888888">{{PAGE_NUM}}</text>
+  </g>
+
+  <g id="chapter-number">
+    <text x="44" y="272" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="40" font-weight="700" letter-spacing="-0.8" fill="#2E9BD6">{{CHAPTER_NUMBER}}</text>
+  </g>
+  <g id="chapter-summary">
+    <text x="44" y="414" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" fill="#888888">{{CHAPTER_SUMMARY}}</text>
+  </g>
+
+  <g id="matrix-slot" data-pptx-placeholder="object" data-pptx-placeholder-idx="10" data-pptx-placeholder-binding="proxy" data-pptx-placeholder-bounds="620 96 616 560">
+    <rect x="680" y="112" width="270" height="230" fill="#0F2A4A"/>
+    <line x1="680" y1="112" x2="680" y2="572" stroke="#D0D0D0" stroke-width="1"/>
+    <line x1="680" y1="572" x2="1220" y2="572" stroke="#D0D0D0" stroke-width="1"/>
+    <line x1="950" y1="112" x2="950" y2="572" stroke="#E8E8E8" stroke-width="1"/>
+    <line x1="680" y1="342" x2="1220" y2="342" stroke="#E8E8E8" stroke-width="1"/>
+    <path d="M680 104 L675 114 L685 114 Z" fill="#D0D0D0"/>
+    <path d="M1228 572 L1218 567 L1218 577 Z" fill="#D0D0D0"/>
+    <text x="664" y="124" text-anchor="end" font-family="'Pretendard SemiBold', Pretendard, 'Malgun Gothic', sans-serif" font-size="13.3" letter-spacing="0.6" fill="#888888">IMPACT</text>
+    <text x="1220" y="600" text-anchor="end" font-family="'Pretendard SemiBold', Pretendard, 'Malgun Gothic', sans-serif" font-size="13.3" letter-spacing="0.6" fill="#888888">EFFORT</text>
+    <text x="704" y="150" font-family="'Pretendard SemiBold', Pretendard, 'Malgun Gothic', sans-serif" font-size="13.3" letter-spacing="0.6" fill="#4FB2E5">QUICK WINS</text>
+    <text x="704" y="186" font-family="'Pretendard SemiBold', Pretendard, 'Malgun Gothic', sans-serif" font-size="18.7" fill="#FFFFFF">가격 체계 정비</text>
+    <text x="704" y="214" font-family="'Pretendard SemiBold', Pretendard, 'Malgun Gothic', sans-serif" font-size="18.7" fill="#FFFFFF">채널 재배분</text>
+    <text x="974" y="150" font-family="'Pretendard SemiBold', Pretendard, 'Malgun Gothic', sans-serif" font-size="13.3" letter-spacing="0.6" fill="#888888">MAJOR PROJECTS</text>
+    <text x="974" y="186" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" fill="#1A1A1A">플랫폼 재구축</text>
+    <text x="704" y="380" font-family="'Pretendard SemiBold', Pretendard, 'Malgun Gothic', sans-serif" font-size="13.3" letter-spacing="0.6" fill="#888888">FILL-INS</text>
+    <text x="704" y="416" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" fill="#1A1A1A">보고 자동화</text>
+    <text x="974" y="380" font-family="'Pretendard SemiBold', Pretendard, 'Malgun Gothic', sans-serif" font-size="13.3" letter-spacing="0.6" fill="#888888">DEPRIORITIZE</text>
+    <text x="974" y="416" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="16" fill="#888888">신규 지역 진출</text>
+  </g>
+</svg>

@@ -114,6 +114,7 @@ primary_color: "#XXXXXX"
 | Brand Name | <display name> |
 | Use Cases | <summary> |
 | Tone | <one-line tone summary> |
+| Recommended pairing | mode: `<mode id>` · visual_style: `<visual style id>` · delivery_purpose: `<text \| balanced \| presentation>` · image_usage: `<id>` · icons: `<id>` |
 
 ## II. Color Scheme
 | Role | HEX | Provenance |
@@ -154,6 +155,7 @@ primary_color: "#XXXXXX"
 - HEX must be `#RRGGBB`
 - Font names are free strings; not validated against locally installed fonts
 - §VII is fully optional — list only directories that actually exist
+- `Recommended pairing` is optional. Values are catalog ids only (`modes/_index.md`, `visual-styles/_index.md`, `confirm_ui/static/catalogs.json`); a short scope note in parentheses is allowed (for example `web (cover only)`). It seeds the Step 4 recommendations and never locks a field — see `references/strategist.md` §d
 
 ### Optional: logo file
 

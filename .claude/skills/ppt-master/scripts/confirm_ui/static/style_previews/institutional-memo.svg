@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <text x="1208" y="48" text-anchor="end" font-family="Pretendard, Arial, sans-serif" font-size="16" fill="#869198">OUTLOOK 2026 · 12</text>
+  <path d="M72 64H1208" stroke="#C9D1D8" stroke-width="1.5"/>
+  <text x="70" y="146" font-family="Pretendard, Arial, sans-serif" font-size="60" font-weight="300" fill="#490E5A">Capacity scarcity reprices the asset</text>
+  <text x="72" y="186" font-family="Pretendard, Arial, sans-serif" font-size="20" fill="#072535">Scope: listed peers, FY2019–FY2026E · read left column first</text>
+  <g font-family="Pretendard, Arial, sans-serif">
+    <text x="72" y="248" font-size="34" font-weight="700" fill="#490E5A">+18%</text>
+    <text x="190" y="246" font-size="20" fill="#490E5A">utilisation outruns new supply</text>
+    <path d="M72 264H614" stroke="#C9D1D8" stroke-width="1"/>
+    <text x="72" y="292" font-size="17" font-weight="700" fill="#072535">Utilisation vs. supply growth, %</text>
+    <g stroke="#EEF1F4"><path d="M72 470H614M72 420H614M72 370H614M72 320H614"/></g>
+    <path d="M72 450L150 432L228 420L306 396L384 372L462 350" fill="none" stroke="#0229B1" stroke-width="3"/>
+    <path d="M462 350L540 330L614 314" fill="none" stroke="#0229B1" stroke-width="3" stroke-dasharray="8 7"/>
+    <path d="M72 440L150 438L228 436L306 430L384 428L462 424L540 422L614 420" fill="none" stroke="#869198" stroke-width="2.5"/>
+    <circle cx="384" cy="372" r="11" fill="none" stroke="#ED1C24" stroke-width="2"/>
+    <text x="72" y="500" font-size="14" fill="#869198">Source: company filings; FY26 internal estimate (illustrative)</text>
+    <text x="666" y="248" font-size="34" font-weight="700" fill="#490E5A">3.1x</text>
+    <text x="774" y="246" font-size="20" fill="#490E5A">peer multiple gap closes</text>
+    <path d="M666 264H1208" stroke="#C9D1D8" stroke-width="1"/>
+    <text x="666" y="292" font-size="17" font-weight="700" fill="#072535">EV / EBITDA by peer, x</text>
+    <g fill="#869198"><rect x="666" y="330" width="60" height="140"/><rect x="746" y="360" width="60" height="110"/><rect x="826" y="380" width="60" height="90"/></g>
+    <rect x="906" y="400" width="60" height="70" fill="#0229B1"/>
+    <path d="M666 470H986" stroke="#072535" stroke-width="1"/>
+    <text x="1010" y="340" font-size="22" font-weight="300" fill="#490E5A">“The discount is</text>
+    <text x="1010" y="372" font-size="22" font-weight="300" fill="#490E5A">a timing artefact,</text>
+    <text x="1010" y="404" font-size="22" font-weight="300" fill="#490E5A">not a verdict.”</text>
+    <text x="666" y="500" font-size="14" fill="#869198">Source: market data as of 2026-06-30; median of 4 listed peers</text>
+  </g>
+  <path d="M72 560H1208" stroke="#C9D1D8" stroke-width="1"/>
+  <g font-family="Pretendard, Arial, sans-serif" font-size="18" fill="#072535">
+    <path d="M72 604L82 588L92 604Z" fill="#5CA712"/>
+    <text x="104" y="603">Upside: contracted volume through 2028</text>
+    <path d="M666 590L676 606L686 590Z" fill="#ED1C24"/>
+    <text x="698" y="603">Risk: permitting delay → mitigated by phased capex</text>
+  </g>
+</svg>
