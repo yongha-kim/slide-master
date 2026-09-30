@@ -54,6 +54,7 @@ Match the canvas to the source so 1:1 pages and paste-back align. Determine the 
 ```bash
 python3 ${SKILL_DIR}/scripts/project_manager.py init <project_name> --format <format>
 python3 ${SKILL_DIR}/scripts/project_manager.py import-sources <project_path> <source.pptx> --move
+# source under ~/Work/ (archive): use --copy instead — see SKILL.md Step 2 install-local exception
 ```
 
 ---

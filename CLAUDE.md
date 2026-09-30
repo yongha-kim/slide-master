@@ -51,6 +51,12 @@ re-architectable source. Do not load either full owner before that answer.
 - Stack: `Pretendard, "Malgun Gothic", sans-serif`; intermediate weights use installed family names (`"Pretendard Medium"`, `"Pretendard SemiBold"`, etc.).
 - Font files are bundled at [`.claude/skills/ppt-master/assets/fonts/Pretendard/`](.claude/skills/ppt-master/assets/fonts/Pretendard/) (SIL OFL) and installed user-level on this machine. PPTX does not embed fonts — decks shared to other machines need Pretendard installed there.
 
+## Source Archive Policy (install-local, standing preference)
+
+- `~/Work/` is the user's document archive (won proposals, reference decks, rule files). Files there are read-only inputs: import them with `project_manager.py import-sources ... --copy`, never `--move`, and never write converted Markdown or other artifacts beside them.
+- This overrides the main skill's `--move` mandate for those paths only; see [`SKILL.md` Step 2](.claude/skills/ppt-master/SKILL.md) install-local exception. Mention the deviation in chat.
+- A reference deck used only as visual style input (not content) stays out of `sources/`; turn it into a template via `create-template` or `create-brand` instead.
+
 ## Required Conventions
 
 - **Repo-wide style rules** — when editing prompt files under [`.claude/skills/ppt-master/references/`](.claude/skills/ppt-master/references/), Python under [`.claude/skills/ppt-master/scripts/`](.claude/skills/ppt-master/scripts/), or any other code/prose in the repo, follow the matching style rule in [`docs/rules/`](docs/rules/).
