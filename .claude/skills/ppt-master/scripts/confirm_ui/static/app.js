@@ -1372,6 +1372,14 @@
             function () { return STATE.visual_style; }, function (v) { STATE.visual_style = v; refreshDirectionPreview(); },
             { allowCustom: true, spectrum: REC && REC.visual_style_spectrum });
         sec.appendChild(sub2);
+        // Single-pass page: the topbar carries the color/typography strip, so
+        // the selected style's preview image rides inline under its chips
+        // (Stage 1 already shows it in the topbar).
+        if (STAGE !== 1) {
+            var inlinePreview = el("div", "inline-direction-preview");
+            sub2.appendChild(inlinePreview);
+            renderDirectionPreview(inlinePreview);
+        }
         host.appendChild(sec);
     }
 

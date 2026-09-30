@@ -793,6 +793,16 @@ body {
     font-size: 12.5px;
     line-height: 1.55;
 }
+/* Single-pass page: selected visual-style preview under the style chips. */
+.inline-direction-preview {
+    max-width: 420px;
+    margin-top: 12px;
+}
+.inline-direction-preview .style-preview {
+    position: static;
+    margin-bottom: 0;
+    background: transparent;
+}
 
 @media (max-width: 1040px) {
     body {
