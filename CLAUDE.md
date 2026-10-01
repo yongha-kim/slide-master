@@ -53,8 +53,8 @@ re-architectable source. Do not load either full owner before that answer.
 
 ## Source Archive Policy (install-local, standing preference)
 
-- `~/Work/` is the user's document archive (won proposals, reference decks, rule files). Files there are read-only inputs: import them with `project_manager.py import-sources ... --copy`, never `--move`, and never write converted Markdown or other artifacts beside them.
-- This overrides the main skill's `--move` mandate for those paths only; see [`SKILL.md` Step 2](.claude/skills/ppt-master/SKILL.md) install-local exception. Mention the deviation in chat.
+- **Archive folder: `~/Work/`** — the user's document archive (won proposals, reference decks, rule files). Each user edits this path to their own archive folder, or deletes this section if they keep none. Files there are read-only inputs: import them with `project_manager.py import-sources ... --copy`, never `--move`, and never write converted Markdown or other artifacts beside them.
+- This overrides the main skill's `--move` mandate for paths inside the archive folder only; see [`SKILL.md` Step 2](.claude/skills/ppt-master/SKILL.md) install-local exception. Mention the deviation in chat.
 - A reference deck used only as visual style input (not content) stays out of `sources/`; turn it into a template via `create-template` or `create-brand` instead.
 
 ## Required Conventions

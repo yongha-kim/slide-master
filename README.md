@@ -57,7 +57,7 @@ projects/<프로젝트>/svg_final/                        ← 브라우저로 �
 
 | 단계 | 내가 하는 일 |
 |---|---|
-| 전략 확인 | 브라우저에 열리는 확인 페이지에서 3단계(방향 → 디자인 시스템 → 이미지/실행)로 캔버스·페이지 수·색·폰트·이미지 방식을 고릅니다. 색상 견본과 폰트 미리보기를 직접 보면서 선택. 첫 단계에서 내장 덱 템플릿(맥킨지·애플·네이버 스타일 등)을 카드로 골라 시작할 수도 있습니다 |
+| 전략 확인 | 먼저 문서 성격에 맞는 템플릿(브랜드·덱) 후보를 한 번 물어봅니다(자유 디자인도 선택 가능). 이어서 브라우저에 열리는 확인 페이지 한 화면에서 캔버스·페이지 수·스타일·색·폰트·이미지 방식을 고릅니다. 색상 견본, 폰트 미리보기, 스타일 미리보기를 직접 보면서 선택 |
 | 생성 중 | 라이브 프리뷰로 슬라이드가 만들어지는 걸 실시간으로 보고, 고칠 부분은 화면에 클릭 주석으로 남기면 AI가 반영 |
 | 완료 후 | `exports/`의 PPTX를 열어 확인. 필요하면 채팅으로 "4페이지 차트를 막대로 바꿔줘"처럼 계속 다듬기 |
 
@@ -75,6 +75,8 @@ projects/<프로젝트>/svg_final/                        ← 브라우저로 �
 
 [python.org](https://www.python.org/downloads/)에서 설치할 때 **"Add to PATH" 체크** 필수. Windows는 [단계별 가이드](docs/windows-installation.md) 참고.
 
+> **macOS 주의** — macOS 기본 `python3`는 3.9라서 일부 스크립트가 실행되지 않습니다. 설치 후 터미널에서 `python3 --version`이 **3.10 이상**으로 나오는지 확인하세요. 스킬 문서는 모두 `python3 ...`로 실행하므로, `python3`가 새로 설치한 버전을 가리켜야 합니다.
+
 **2단계 — AI 에이전트**
 
 [Claude Code](https://claude.ai/code)(CLI 또는 VS Code/JetBrains 확장) 권장 — 이 프로젝트가 가장 많이 검증된 환경입니다.
@@ -86,14 +88,25 @@ projects/<프로젝트>/svg_final/                        ← 브라우저로 �
 **3단계 — 저장소 받기 + 의존성 설치**
 
 ```bash
-git clone https://github.com/byungjunjang/slide-master.git
+git clone https://github.com/yongha-kim/slide-master.git
 cd slide-master
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 받은 폴더를 에이전트에서 엽니다 — IDE형이면 File → Open Folder, CLI형이면 `cd slide-master` 후 실행.
 
-**4단계 (선택) — AI 이미지 생성**
+**4단계 — Pretendard 폰트 설치**
+
+모든 덱이 Pretendard로 만들어지므로 꼭 설치합니다. 저장소에 폰트 파일이 들어 있습니다.
+
+```bash
+# macOS — 사용자 폰트 폴더에 복사 (관리자 권한 불필요)
+cp .claude/skills/ppt-master/assets/fonts/Pretendard/*.otf ~/Library/Fonts/
+```
+
+Windows는 같은 폴더의 `.otf` 파일을 모두 선택 → 우클릭 → **설치**. 만든 PPTX를 받는 사람의 PC에도 Pretendard가 있어야 같은 모양으로 보입니다.
+
+**5단계 (선택) — AI 이미지 생성**
 
 표지·인포그래픽에 AI 이미지를 쓰려면 둘 중 하나:
 
@@ -105,7 +118,7 @@ codex login
 # B) API 키 — 환경변수 또는 .env에 OPENAI_API_KEY / GEMINI_API_KEY 등
 ```
 
-**5단계 (선택) — 수출 PPTX 검증 도구**
+**6단계 (선택) — 수출 PPTX 검증 도구**
 
 내보낸 PPTX의 패키지 무결성·텍스트 넘침·렌더링을 자동 점검하려면 [OfficeCLI](https://github.com/iOfficeAI/OfficeCLI)를 설치합니다:
 
@@ -114,6 +127,14 @@ npm install -g @officecli/officecli@1.0.135
 ```
 
 > Windows에 PowerPoint가 설치되어 있으면 검증 스크린샷이 **실제 PowerPoint 렌더링**으로 찍힙니다(가장 정확). 없어도 내장 렌더러로 동작합니다.
+
+**7단계 — 설치 확인**
+
+```bash
+python3 .claude/skills/ppt-master/scripts/preflight.py --needs-images
+```
+
+`[preflight] PASS`가 나오면 준비 완료입니다. 경고(WARN)는 선택 항목(OfficeCLI, Codex 등)이 빠졌다는 뜻이고, FAIL이면 표시된 항목을 먼저 설치하세요. 그다음 이 폴더를 Claude Code에서 열고 "이 자료로 PPT 만들어줘"처럼 요청하면 됩니다.
 
 ---
 
@@ -230,7 +251,7 @@ sources/회사표준템플릿.pptx 디자인 그대로 쓰고,
 
 ## 라이선스
 
-[MIT](LICENSE). 이 저장소는 [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) (MIT, Copyright © Hugo He)의 포크이며, 원 프로젝트의 라이선스 전문과 저작권 고지를 유지합니다. 아이콘·폰트 등 번들 자산은 각자의 라이선스(SIL OFL 등)를 따릅니다.
+[MIT](LICENSE). 이 저장소는 [byungjunjang/slide-master](https://github.com/byungjunjang/slide-master)를 거친 [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) (MIT, Copyright © Hugo He)의 포크이며, 원 프로젝트의 라이선스 전문과 저작권 고지를 유지합니다. 아이콘·폰트 등 번들 자산은 각자의 라이선스(SIL OFL 등)를 따릅니다.
 
 외부 저장소에서 가져와 개작한 스킬은 각 디렉토리에 업스트림 라이선스 전문을 동봉합니다.
 
