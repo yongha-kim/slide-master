@@ -89,6 +89,67 @@ class SpecParseError(RuntimeError):
     """Raised when a design_spec.md cannot be turned into an index entry."""
 
 
+_FM_KEY_RE = re.compile(r"^(\s*)([A-Za-z0-9_]+)\s*:(?:\s+(.*?))?\s*$")
+_FM_ITEM_RE = re.compile(r"^\s+-\s+(.*?)\s*$")
+
+
+def _parse_fm_scalar(raw: str) -> object:
+    """Convert one frontmatter value: quoted string, ``[a, b]`` list, int, or bare string."""
+    if len(raw) >= 2 and raw[0] == raw[-1] and raw[0] in "\"'":
+        return raw[1:-1]
+    if raw.startswith("[") and raw.endswith("]"):
+        inner = raw[1:-1].strip()
+        return [_parse_fm_scalar(item.strip()) for item in inner.split(",")] if inner else []
+    if re.fullmatch(r"-?\d+", raw):
+        return int(raw)
+    return raw
+
+
+def _parse_simple_frontmatter(block: str) -> dict:
+    """Stdlib reader for the frontmatter shapes used by template design specs.
+
+    Used only when PyYAML is unavailable. Recognized lines::
+
+        key: value            # bare / "quoted" / 'quoted' string, or int
+        key: [a, "b"]         # flow list
+        key:                  # one nested level: indented `sub: value` or `- item`
+          sub: value
+
+    Anything outside this grammar raises ``SpecParseError`` — install pyyaml
+    for richer YAML.
+    """
+    data: dict = {}
+    parent: str | None = None
+    for lineno, line in enumerate(block.splitlines(), start=1):
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        indented = line[0].isspace()
+        item = _FM_ITEM_RE.match(line)
+        key_match = _FM_KEY_RE.match(line)
+        if indented and parent is not None and item:
+            if data[parent] is None:
+                data[parent] = []
+            if isinstance(data[parent], list):
+                data[parent].append(_parse_fm_scalar(item.group(1)))
+                continue
+        elif indented and parent is not None and key_match:
+            if data[parent] is None:
+                data[parent] = {}
+            if isinstance(data[parent], dict) and key_match.group(3):
+                data[parent][key_match.group(2)] = _parse_fm_scalar(key_match.group(3))
+                continue
+        elif not indented and key_match:
+            key, raw = key_match.group(2), key_match.group(3)
+            data[key] = _parse_fm_scalar(raw) if raw else None
+            parent = None if raw else key
+            continue
+        raise SpecParseError(
+            f"frontmatter line {lineno} is outside the simple key/value grammar "
+            f"({line.strip()!r}); install pyyaml (pip install pyyaml) to parse it."
+        )
+    return data
+
+
 def _read_spec(spec_path: Path) -> tuple[dict | None, str]:
     """Split YAML frontmatter from the body. Returns ``(frontmatter, body)``."""
     text = spec_path.read_text(encoding="utf-8")
@@ -100,10 +161,7 @@ def _read_spec(spec_path: Path) -> tuple[dict | None, str]:
     fm_block = text[4:end]
     body = text[end + 5:]
     if yaml is None:
-        raise SpecParseError(
-            "design_spec.md has YAML frontmatter but PyYAML is not installed; "
-            "install pyyaml or remove the frontmatter."
-        )
+        return _parse_simple_frontmatter(fm_block), body
     try:
         data = yaml.safe_load(fm_block) or {}
     except yaml.YAMLError as exc:
