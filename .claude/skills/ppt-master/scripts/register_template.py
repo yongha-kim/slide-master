@@ -23,6 +23,11 @@ discovery happens exclusively against the index file):
 - layout: ``{ summary, canvas_format, page_count, page_types[] }``
 - deck:   ``{ summary, canvas_format, page_count, primary_color }``
 
+Those fields are re-extracted from ``design_spec.md`` on every run. Keys that
+exist only in the index — e.g. a deck's hand-maintained ``defaults`` block
+(Stage-1 anchors the Confirm UI re-defaults on a deck pick) — are carried
+over unchanged when an entry is refreshed, including under ``--rebuild-all``.
+
 Usage::
 
     python3 scripts/register_template.py <id> --kind deck     # default kind=deck
@@ -350,6 +355,15 @@ def _write_index(path: Path, data: "OrderedDict[str, dict]", *, dry_run: bool) -
     path.write_text(payload, encoding="utf-8")
 
 
+def _merge_entry(previous: dict | None, fresh: dict) -> "OrderedDict[str, object]":
+    """Refresh spec-derived fields while keeping index-only keys from ``previous``."""
+    merged = OrderedDict(fresh)
+    for key, value in (previous or {}).items():
+        if key not in merged:
+            merged[key] = value
+    return merged
+
+
 def _enumerate_ids(kind: str) -> list[str]:
     base = KIND_CONFIG[kind]["dir"]
     if not base.exists():
@@ -451,12 +465,16 @@ def main() -> int:
             print(f"Error: {tid}: {exc}", file=sys.stderr)
             return 1
 
+    previous = _load_index(cfg["index"])
     if args.rebuild_all:
-        index = OrderedDict((tid, extracted[tid]["entry"]) for tid in sorted(extracted))
+        index = OrderedDict(
+            (tid, _merge_entry(previous.get(tid), extracted[tid]["entry"]))
+            for tid in sorted(extracted)
+        )
     else:
-        index = _load_index(cfg["index"])
+        index = previous
         for tid, payload in extracted.items():
-            index[tid] = payload["entry"]
+            index[tid] = _merge_entry(previous.get(tid), payload["entry"])
         index = OrderedDict(sorted(index.items()))
 
     _write_index(cfg["index"], index, dry_run=args.dry_run)
